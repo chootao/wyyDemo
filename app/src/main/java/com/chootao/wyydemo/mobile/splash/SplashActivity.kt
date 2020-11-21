@@ -15,7 +15,7 @@ class SplashActivity : BaseActivity() {
     private val viewModel: SplashViewModel by viewModels()
 
     override fun initData() {
-        viewModel.startCountDown(3)
+        viewModel.startCountDown(4)
     }
 
     override fun initEvent() {
