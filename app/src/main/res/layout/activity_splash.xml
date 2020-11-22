@@ -5,12 +5,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primaryColor"
     tools:context=".mobile.splash.SplashActivity">
 
     <ImageView
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:src="@drawable/bg_splash"/>
+        android:layout_marginTop="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/bg_splash_music_title"/>
 
     <TextView
         android:id="@+id/tv_splash_jump"
@@ -25,4 +30,37 @@
         android:layout_height="30dp"
         android:layout_marginEnd="20dp" />
 
+    <LinearLayout
+        app:layout_constraintBottom_toTopOf="@+id/tv_splash_ipv6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_height="32dp"
+            android:layout_width="32dp"
+            android:src="@drawable/ic_music_title"/>
+        <TextView
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:text="网易云音乐"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginBottom="10dp"
+
+        android:id="@+id/tv_splash_ipv6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="10sp"
+        android:textColor="@color/gray"
+        android:text="网易云支持IPv6网络"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

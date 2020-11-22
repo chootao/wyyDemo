@@ -10,17 +10,14 @@ import com.chootao.wyydemo.mobile.main.MainActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
 
-class SplashActivity : BaseActivity() {
-    private val TAG = "SplashActivity"
-    private val viewModel: SplashViewModel by viewModels()
-
+class SplashActivity : BaseActivity<SplashViewModel>() {
     override fun initData() {
         viewModel.startCountDown(4)
     }
 
     override fun initEvent() {
         viewModel.mElapsedRealTime.observe(this , Observer {
-            tv_splash_jump.text = it.toString()
+            tv_splash_jump.text = "跳过 ${it}"
         })
 
         viewModel.isComplete.observe(this , Observer {
@@ -36,6 +33,9 @@ class SplashActivity : BaseActivity() {
     }
 
     override fun initView() {
-        setContentView(R.layout.activity_splash)
+
     }
+
+    override val layoutID: Int
+        get() = R.layout.activity_splash
 }

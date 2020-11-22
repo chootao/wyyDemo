@@ -3,30 +3,32 @@ package com.chootao.wyydemo.mobile.splash
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.lachesis.consumable.utils.RxTimer
 import kotlinx.coroutines.*
 
 class SplashViewModel : ViewModel() {
-    val mElapsedRealTime = MutableLiveData<Int>()
+    val mElapsedRealTime = MutableLiveData<Long>()
     val isComplete = MutableLiveData<Boolean>()
 
+    private var rxTimer : RxTimer? = null
 
-    fun startCountDown(initCount : Int){
+    fun startCountDown(initCount : Long){
         mElapsedRealTime.value = initCount
-        GlobalScope.launch(Dispatchers.IO) {
-            while ( mElapsedRealTime.value?: 0 > 0){
-                delay(1000)
-                withContext(Dispatchers.Main){
-                    val count = (mElapsedRealTime.value?:0) - 1
-                    mElapsedRealTime.value = count
-                }
+        rxTimer = RxTimer()
+        rxTimer?.countDown( initCount , rxAction = {
+            mElapsedRealTime.value = it
+            if(it <= 0 ){
+                countComplete()
             }
-            withContext(Dispatchers.Main){
-                isComplete.value = true
-            }
-        }
+        })
+    }
+
+    private fun countComplete(){
+        rxTimer?.cancel()
+        isComplete.value = true
     }
 
     fun jumpClick(){
-        isComplete.value = true
+        countComplete()
     }
 }
