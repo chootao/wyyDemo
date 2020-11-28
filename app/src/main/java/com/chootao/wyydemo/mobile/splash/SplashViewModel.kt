@@ -1,10 +1,8 @@
 package com.chootao.wyydemo.mobile.splash
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.lachesis.consumable.utils.RxTimer
-import kotlinx.coroutines.*
 
 class SplashViewModel : ViewModel() {
     val mElapsedRealTime = MutableLiveData<Long>()

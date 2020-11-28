@@ -1,2 +1,4 @@
+include ':wyy_base'
+include ':wyy_login'
 include ':app'
 rootProject.name = "wyyDemo"

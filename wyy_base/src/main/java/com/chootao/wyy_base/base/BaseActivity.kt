@@ -1,4 +1,4 @@
-package com.chootao.wyydemo.base
+package com.chootao.wyy_base.base
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
-import com.chootao.wyydemo.R
+import com.chootao.wyy_base.R
 import kotlinx.android.synthetic.main.activity_base.*
 import java.lang.reflect.ParameterizedType
 

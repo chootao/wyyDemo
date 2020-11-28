@@ -1,11 +1,9 @@
 package com.chootao.wyydemo.mobile.splash
 
 import android.content.Intent
-import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import com.chootao.wyy_base.base.BaseActivity
 import com.chootao.wyydemo.R
-import com.chootao.wyydemo.base.BaseActivity
 import com.chootao.wyydemo.mobile.main.MainActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 

@@ -1,6 +1,7 @@
-package com.chootao.wyydemo.base
+package com.chootao.wyy_base.base
 
 import androidx.lifecycle.ViewModel
+
 
 class BaseViewModel : ViewModel() {
 
